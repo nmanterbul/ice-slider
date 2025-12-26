@@ -42,19 +42,19 @@ public class App extends Application {
             switch(event.getCode()) {
                 case UP, W    -> {
                     // TODO 11: desplazar el jugador hacia ARRIBA
-
+                    iceSlide.moverJugador(-1,0);
                 }
                 case DOWN, S  -> {
                     // TODO 12: desplazar el jugador hacia ABAJO
-
+                    iceSlide.moverJugador(1,0);
                 }
                 case LEFT, A  -> {
                     // TODO 13: desplazar el jugador hacia la IZQUIERDA
-
+                    iceSlide.moverJugador(0,-1);
                 }
                 case RIGHT, D -> {
                     // TODO 14: desplazar el jugador hacia la DERECHA
-
+                iceSlide.moverJugador(0,1);
                 }
                 default -> {}
             }
@@ -96,6 +96,21 @@ public class App extends Application {
     private int[][] cargarNivel(int numero) {
         // TODO 15: Devolver el nivel correspondiente al numero indicado, sino existe devolver null
         //  Recorrer el enum Nivel para ello
+
+        for (int i = 0; i < Nivel.values().length; i++) {
+
+            if(numero == Nivel.NIVEL_1.getNumero() ){
+                return Nivel.NIVEL_1.getEscenario();
+            } else if (numero == Nivel.NIVEL_2.getNumero()) {
+                return Nivel.NIVEL_2.getEscenario();
+            } else if (numero == Nivel.NIVEL_3.getNumero()) {
+                return Nivel.NIVEL_3.getEscenario();
+            } else if (numero == Nivel.NIVEL_4.getNumero()) {
+                return Nivel.NIVEL_3.getEscenario();
+            }else {
+
+            }
+        }
         return null;
     }
 
